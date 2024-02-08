@@ -1,0 +1,48 @@
+---
+title: "Building Unreal Engine projects from the solution using MSBuild"
+datePublished: Fri Nov 17 2017 14:08:00 GMT+0000 (Coordinated Universal Time)
+cuid: clsd6raeh000509la2r2jdd79
+slug: building-unreal-engine-projects-from-the-solution-using-msbuild
+canonical: https://roderickkennedy.com/dbgdiary/building-unreal-engine-projects-from-the-solution-using-msbuild
+
+---
+
+Building Unreal Engine projects from the solution using MSBuild
+===============================================================
+
+17 Nov
+
+Written By [Roderick Kennedy](https://roderickkennedy.com/dbgdiary?author=5f08d2770b281846bf04ee3b)
+
+If you want to use MSBuild to build UE4 projects, but need to build them from within the solution instead of specifying the vcxproj file (which doesn't always work correctly), you need to use the "Target" /t: command line parameter, like so:  
+  
+`"path to MSBuild.exe" /t:Engine\UE4 /p:Configuration="Development Editor" /p:Platform=Win64 UE4.sln`  
+  
+Key things to note:  
+
+*   the configuration and platform specifiers are Solution-style, with spaces instead of underscores, and Win64 instead of x64 etc.
+    
+*   The solution folder path must be specified in the target parameter, otherwise MSBuild will not recognize the project name.
+    
+
+ [Roderick Kennedy](https://roderickkennedy.com/dbgdiary?author=5f08d2770b281846bf04ee3b)
+
+Building Unreal Engine projects from the solution using MSBuild
+===============================================================
+
+17 Nov
+
+Written By [Roderick Kennedy](https://roderickkennedy.com/dbgdiary?author=5f08d2770b281846bf04ee3b)
+
+If you want to use MSBuild to build UE4 projects, but need to build them from within the solution instead of specifying the vcxproj file (which doesn't always work correctly), you need to use the "Target" /t: command line parameter, like so:  
+  
+`"path to MSBuild.exe" /t:Engine\UE4 /p:Configuration="Development Editor" /p:Platform=Win64 UE4.sln`  
+  
+Key things to note:  
+
+*   the configuration and platform specifiers are Solution-style, with spaces instead of underscores, and Win64 instead of x64 etc.
+    
+*   The solution folder path must be specified in the target parameter, otherwise MSBuild will not recognize the project name.
+    
+
+ [Roderick Kennedy](https://roderickkennedy.com/dbgdiary?author=5f08d2770b281846bf04ee3b)
